@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3863629173858232056}
-  - component: {fileID: 6668351451837645104}
   - component: {fileID: 3575863570559093297}
+  - component: {fileID: 8355001992065615894}
   m_Layer: 0
   m_Name: pivot
   m_TagString: Untagged
@@ -36,18 +36,6 @@ Transform:
   - {fileID: 8399186054662439951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6668351451837645104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807571368325414392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7537e634f16111a459e919d2bbc73deb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3575863570559093297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,6 +57,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.99, y: 2.04, z: 2}
   m_Center: {x: 0, y: 0.74, z: 0}
+--- !u!114 &8355001992065615894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807571368325414392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2f1e6e18961bd4d80dfdfd4fcbe7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5473354257144847183
 GameObject:
   m_ObjectHideFlags: 0
