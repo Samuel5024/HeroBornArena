@@ -48,19 +48,14 @@ public class Player_Behavior : MonoBehaviour
     {
         if(jump)
         {
-            //make player jump
-            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse); //make player jump
             jump = false;
         }
-        //rotation stores our our left and right rotation
-        Vector3 rotation = Vector3.up * hInput;
+        
+        Vector3 rotation = Vector3.up * hInput; //left & right rotation
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Vector3 retrun angle --> Euler angle
 
-        //Quaternion.Euler converts & returns the Vector3 parameter in Euler Angles (Unity preferred)
-        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
-
-        //Calls MovePosition on our _rb component and applies movement force to satisfy our vector parameter
         _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
-
         _rb.MoveRotation(_rb.rotation * angleRot);
     }
 
