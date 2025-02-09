@@ -13,6 +13,8 @@ public class Player_Behavior : MonoBehaviour
     public float bulletSpeed = 250f;
     public LayerMask groundLayer;
 
+    private int _itemsCollected = 0;
+    private int _playerHP = 10;
     private float vInput;
     private float hInput;
     private bool jump = false;
