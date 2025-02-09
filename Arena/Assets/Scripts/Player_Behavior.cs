@@ -9,11 +9,14 @@ public class Player_Behavior : MonoBehaviour
     public float rotateSpeed = 75f;
     public float jumpVelocity = 5f;
     public float distanceToGround = 0.1f;
+    public GameObject bullet;
+    public float bulletSpeed = 250f;
     public LayerMask groundLayer;
 
     private float vInput;
     private float hInput;
     private bool jump = false;
+    private bool shoot = false;
     private Rigidbody _rb; //capsule rigid body info
     private CapsuleCollider _col;
 
@@ -28,11 +31,15 @@ public class Player_Behavior : MonoBehaviour
         vInput = Input.GetAxis("Vertical") * moveSpeed; //detects if up (W) or down (S) is pressed
         hInput = Input.GetAxis("Horizontal") * rotateSpeed;//detects if up left (L) or right(D) is pressed
 
-        if (IsGrounded () && Input.GetKeyDown(KeyCode.Space))
+        if(IsGrounded () && Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            shoot = true;
+        }
 
         /* We comment out Transform & Rotate so we don't run two different kinds of player control 
             Translate takes in a Vector3 parameter to move the Player's TRANSFORM component
@@ -57,6 +64,15 @@ public class Player_Behavior : MonoBehaviour
 
         _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         _rb.MoveRotation(_rb.rotation * angleRot);
+
+        if(shoot)
+        {
+            shoot = false;
+            GameObject newBullet = Instantiate(bullet, this.transform.position + //always shoot from the right side of capsule
+                transform.right, this.transform.rotation) as GameObject;
+            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
+            bulletRB.velocity = this.transform.forward * bulletSpeed;
+        }
     }
 
     private bool IsGrounded()
