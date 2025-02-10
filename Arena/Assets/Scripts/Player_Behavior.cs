@@ -15,7 +15,6 @@ public class Player_Behavior : MonoBehaviour
 
     //private int _itemsCollected = 0;
     //private int _playerHP = 10;0
-
     private float vInput;
     private float hInput;
     private bool jump = false;
@@ -71,7 +70,7 @@ public class Player_Behavior : MonoBehaviour
         if(shoot)
         {
             shoot = false;
-            GameObject newBullet = Instantiate(bullet, this.transform.position + //always shoot from the right side of capsule
+            GameObject newBullet = Instantiate(bullet, this.transform.position - //always shoot from the right side of capsule
                 transform.right, this.transform.rotation) as GameObject;
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
             bulletRB.velocity = this.transform.forward * bulletSpeed;
