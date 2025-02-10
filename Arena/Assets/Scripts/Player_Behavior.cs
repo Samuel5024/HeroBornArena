@@ -10,19 +10,16 @@ public class Player_Behavior : MonoBehaviour
     public float jumpVelocity = 5f;
     public float distanceToGround = 0.1f;
     public GameObject bullet;
-    public float bulletSpeed = 250f;
+    public float bulletSpeed = 15f;
     public LayerMask groundLayer;
-
-    //private int _itemsCollected = 0;
-    //private int _playerHP = 10;0
     private float vInput;
     private float hInput;
     private bool jump = false;
     private bool shoot = false;
     private Rigidbody _rb; //capsule rigid body info
-    private CapsuleCollider _col;
     private bool hasGun = false;
-
+    private CapsuleCollider _col;
+  
     void Start()
     {
         _rb = GetComponent<Rigidbody>(); //check if RigidBody component exists
