@@ -18,6 +18,7 @@ public class Item_Behavior_Health: MonoBehaviour
             Destroy(this.transform.gameObject);
             Debug.Log("You grabbed a Health Kit and restored 5 HP :)");
             gameManager.Health += 5;
+            gameManager.Items += 1;
         }
     }
 }

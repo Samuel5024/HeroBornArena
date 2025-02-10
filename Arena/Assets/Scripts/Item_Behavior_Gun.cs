@@ -18,7 +18,10 @@ public class Item_Behavior_Gun : MonoBehaviour
         {
             Destroy(this.transform.gameObject); //erase item from hierarchy when collected by player
             Debug.Log("Here's a Weapon.\nHOORAY! Now try not to die :)");
-            //gameManager.Items += 1;
+            gameManager.Items += 1;
+            collision.gameObject.GetComponent<Player_Behavior>().OnGun();
         }
     }
+
+
 }

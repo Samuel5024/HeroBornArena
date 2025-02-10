@@ -21,6 +21,7 @@ public class Player_Behavior : MonoBehaviour
     private bool shoot = false;
     private Rigidbody _rb; //capsule rigid body info
     private CapsuleCollider _col;
+    private bool hasGun = false;
 
     void Start()
     {
@@ -67,7 +68,7 @@ public class Player_Behavior : MonoBehaviour
         _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         _rb.MoveRotation(_rb.rotation * angleRot);
 
-        if(shoot)
+        if(shoot && hasGun)
         {
             shoot = false;
             GameObject newBullet = Instantiate(bullet, this.transform.position - //always shoot from the right side of capsule
@@ -88,4 +89,9 @@ public class Player_Behavior : MonoBehaviour
         
         return grounded;
     }
+
+    public void OnGun()
+    {
+        hasGun = true;
+    } 
 }

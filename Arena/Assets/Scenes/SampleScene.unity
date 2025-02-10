@@ -677,10 +677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c831f228d5b5424c828a27ba57658fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showWinScreen: 1
+  showWinScreen: 0
   labelText: Grab HP, Weaponry, and Bombs
   player_StartingHealth: 10
   initial_BombCount: 0
+  maxItems: 9
 --- !u!1001 &562031978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,7 +1491,7 @@ MonoBehaviour:
   jumpVelocity: 5
   distanceToGround: 0.1
   bullet: {fileID: 2857938355613270919, guid: e377707c689e0f244b3fd14269d9299f, type: 3}
-  bulletSpeed: -10
+  bulletSpeed: -15
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3931,68 +3932,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2573985817491628565, guid: d40c1f9af89986a43ad23cde4eb9b277, type: 3}
   m_PrefabInstance: {fileID: 326312172}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1559015978 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-  m_PrefabInstance: {fileID: 1662078986}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1662078986
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2094167360}
-    m_Modifications:
-    - target: {fileID: 1807571368325414392, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_Name
-      value: pivot (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863629173858232056, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2ea226e43c52cb74881e25bda36730b7, type: 3}
 --- !u!1001 &1719475501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4321,7 +4260,6 @@ Transform:
   m_Children:
   - {fileID: 315722739}
   - {fileID: 1964872373}
-  - {fileID: 1559015978}
   - {fileID: 1914672843}
   - {fileID: 1025478013}
   - {fileID: 159039607}
