@@ -4,42 +4,44 @@ using UnityEngine;
 
 public class Game_Behavior : MonoBehaviour
 {
-    public string labelText = "Collect all 4 items and win your freedom!";
-    public int maxItems = 4;
-    private int _itemsCollected = 0;
-    public int Items
+    public string labelText = "Grab HP, Weaponry, and Bombs";
+    public int player_StartingHealth = 15;
+    private int player_MaxHealth = 30;
+    public int Health
     {
-        get{ return _itemsCollected; }
+        get { return player_StartingHealth; }
 
         set {
-            _itemsCollected = value;
-            if(_itemsCollected >= maxItems)
+            player_StartingHealth = value;
+            if (player_StartingHealth >= player_MaxHealth)
+                labelText = "Full HP!\nGather the Remaining Items!";
+        }
+    }
+
+    public int initial_BombCount = 0;
+    private int max_BombCount = 3;
+    public int Bombs
+    {
+        get{ return initial_BombCount; }
+
+        set
+        {
+            if (initial_BombCount >= max_BombCount)
             {
-                labelText = "You've found all the items!";
+                labelText = "All Bombs have been collected!";
             }
             else
             {
-                labelText = "Item found, only " + (maxItems -
-                    _itemsCollected) + " remaining!";
+                labelText = "There are still " +
+                    (max_BombCount - initial_BombCount) + " bombs to collect!";
             }
         }
     }
-
-    private int _playerHP = 3;
-    public int HP
-    {
-        get { return _playerHP; }
-
-        set {
-            _playerHP = value;
-            Debug.LogFormat("Lives: {0}", _playerHP);
-        }
-    }
-
     void OnGUI()
     {
-        GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " + _playerHP);
-        GUI.Box(new Rect(20, 50, 150, 25), "Items Collected: " + _itemsCollected);
+        GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " + player_StartingHealth);
+        GUI.Box(new Rect(180, 20, 150, 25), "Weapon: ");
+        GUI.Box(new Rect(20, 50, 150, 25), "Bombs: " + initial_BombCount);
         GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height - 50, 300, 50), labelText);
     }
 }

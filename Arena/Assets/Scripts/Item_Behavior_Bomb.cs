@@ -19,7 +19,7 @@ public class Item_Behavior_Bomb : MonoBehaviour
         {
             Destroy(this.transform.gameObject);
             Debug.Log("You Got a Bomb! \n Time to go KABOOM!");
-            gameManager.Items += 1;
+            gameManager.Bombs += 1;
         }
     }
 }
