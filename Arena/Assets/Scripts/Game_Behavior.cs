@@ -42,7 +42,7 @@ public class Game_Behavior : MonoBehaviour
     }
 
     private int _itemsCollected = 0;
-    public int maxItems =10;
+    public int maxItems =9;
     public int Items
     {
         get { return _itemsCollected; }
