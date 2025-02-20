@@ -18,11 +18,13 @@ public class Player_Behavior : MonoBehaviour
     private Rigidbody _rb; //capsule rigid body info
     private bool hasGun = false;
     private CapsuleCollider _col;
-  
+    private Game_Behavior _gameManager;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>(); //check if RigidBody component exists
         _col = GetComponent<CapsuleCollider>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior>();
     }
     void Update()
     {
@@ -50,7 +52,7 @@ public class Player_Behavior : MonoBehaviour
         */
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if(jump)
         {
@@ -74,7 +76,7 @@ public class Player_Behavior : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    bool IsGrounded()
     {
         Vector3 capsuleBottom = new Vector3(_col.bounds.center.x, 
             _col.bounds.min.y, _col.bounds.center.z);
@@ -89,5 +91,13 @@ public class Player_Behavior : MonoBehaviour
     public void OnGun()
     {
         hasGun = true;
-    } 
+    }
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Enemy")
+        {
+            _gameManager.Health -= 5;
+        }
+    }
 }

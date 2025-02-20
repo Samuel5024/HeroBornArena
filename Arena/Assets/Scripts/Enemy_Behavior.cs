@@ -11,6 +11,26 @@ public class Enemy_Behavior : MonoBehaviour
 
     private int locationIndex = 0;
     private NavMeshAgent agent;
+    private int _lives = 3;
+    public int EnemyLives
+    {
+        get
+        {
+            return _lives;
+        }
+
+        set
+        {
+            _lives = value;
+
+            if(_lives <= 0)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Enemy Down!");
+            }
+        }
+    }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -49,6 +69,7 @@ public class Enemy_Behavior : MonoBehaviour
     {
         if(other.name == "Player")
         {
+            agent.destination = player.position;
             Debug.Log("I.SEE.YOU.");
         }
 
@@ -59,6 +80,15 @@ public class Enemy_Behavior : MonoBehaviour
         if(other.name == "Player")
         {
             Debug.Log("SEE.YOU.SOON.");
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Bullet(Clone)")
+        {
+            EnemyLives -= 1;
+            Debug.Log("Critical Hit!");
         }
     }
   
