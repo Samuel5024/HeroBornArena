@@ -228,7 +228,7 @@ PrefabInstance:
     - target: {fileID: 6012341101174721704, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9105cf4bbc4fb31479e2afe3138479a0, type: 2}
+      objectReference: {fileID: 2100000, guid: d893f707bc253a84aa1e7d87361c830a, type: 2}
     - target: {fileID: 6148826891477408005, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 6263159096947847993, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8daecc76e81cf114c9854e9ee5a2526a, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ff1df6862ae9684eb34810df64bc115, type: 2}
     - target: {fileID: 6343281552151118799, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 6800223724675423407, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8daecc76e81cf114c9854e9ee5a2526a, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ff1df6862ae9684eb34810df64bc115, type: 2}
     - target: {fileID: 6904296044936973091, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 6800223724675423407, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8daecc76e81cf114c9854e9ee5a2526a, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ff1df6862ae9684eb34810df64bc115, type: 2}
     - target: {fileID: 6904296044936973091, guid: a1745fa256c84aa43928bf32d0058396, type: 3}
       propertyPath: m_Layer
       value: 3
