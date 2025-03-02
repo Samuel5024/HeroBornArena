@@ -103,7 +103,7 @@ public class Game_Behavior : MonoBehaviour
         if (showWinScreen)
         {
             if (GUI.Button(new Rect(Screen.width / 2 - 100,
-            Screen.height / 2 - 50, 225, 100), "CONGRADULATIONS!\n*YOU'RE THE WINNER*\n:)"))
+            Screen.height / 2 - 50, 225, 100), "CONGRATULATIONS!\n*YOU'RE THE WINNER*\n:)"))
             {
                 Utilities.RestartLevel();
             }
@@ -113,7 +113,7 @@ public class Game_Behavior : MonoBehaviour
         if (showLossScreen)
         { 
             if (GUI.Button(new Rect(Screen.width / 2 - 100,
-            Screen.height / 2 - 50, 200, 100), "CONGRADULATIONS!\n*YOU ARE NOW DEAD*\n:)"))
+            Screen.height / 2 - 50, 200, 100), "CONGRATULATIONS!\n*YOU ARE NOW DEAD*\n:)"))
             {
                 Utilities.RestartLevel();
             }
