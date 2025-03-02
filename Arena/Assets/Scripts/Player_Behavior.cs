@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Player_Behavior : MonoBehaviour
@@ -19,6 +20,7 @@ public class Player_Behavior : MonoBehaviour
     private bool hasGun = false;
     private CapsuleCollider _col;
     private Game_Behavior _gameManager;
+    public bool yes; //part of the IsGroundedButBetter logic
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class Player_Behavior : MonoBehaviour
         vInput = Input.GetAxis("Vertical") * moveSpeed; //detects if up (W) or down (S) is pressed
         hInput = Input.GetAxis("Horizontal") * rotateSpeed;//detects if up left (L) or right(D) is pressed
 
-        if(IsGrounded () && Input.GetKeyDown(KeyCode.Space))
+        if(IsGroundedButBetter() && Input.GetKeyDown(KeyCode.Space)) //changed from IsGrounded() -> IsGroundedButBetter()
         {
             jump = true;
         }
@@ -74,6 +76,7 @@ public class Player_Behavior : MonoBehaviour
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
             bulletRB.velocity = this.transform.forward * bulletSpeed;
         }
+        yes = IsGroundedButBetter(); //
     }
 
     bool IsGrounded()
@@ -86,6 +89,12 @@ public class Player_Behavior : MonoBehaviour
                 QueryTriggerInteraction.Ignore);
         
         return grounded;
+    }
+    bool IsGroundedButBetter() //checks if there's something in the way
+    {                                                                
+        Vector3 down = transform.TransformDirection(Vector3.down); //gets the down direction
+                                                                //Raycast: think of a laser pointer - hitting something = true
+        return Physics.Raycast(transform.position, down, 1.2f); //does a Raycast in the downwards position for 1.2 units
     }
 
     public void OnGun()
