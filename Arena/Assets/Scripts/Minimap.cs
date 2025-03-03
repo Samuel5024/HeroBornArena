@@ -11,6 +11,10 @@ public class Minimap : MonoBehaviour
     {
         Vector3 newPosition = player.position; //new minimap position = player position
         newPosition.y = transform.position.y; //zoom out on the y axis
+        //if newPosition.x < # {
+        //   newPosition.x = #
+        //}
+        
         transform.position = newPosition;
 
         transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f); //camera rotates with player on the y-axis
