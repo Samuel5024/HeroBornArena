@@ -95,7 +95,6 @@ public class Game_Behavior : MonoBehaviour
     void OnGUI()
     {
         GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " + player_StartingHealth);
-        GUI.Box(new Rect(180, 20, 150, 25), "Weapon: ");
         GUI.Box(new Rect(20, 50, 150, 25), "Bombs: " + initial_BombCount);
         GUI.Box(new Rect(650, 20, 250, 25), "OBJECTIVE: Grab All Collectibles.");
         GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height - 50, 300, 50), labelText);
