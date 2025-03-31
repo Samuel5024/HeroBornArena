@@ -34,6 +34,7 @@ public class Game_Behavior_UI : MonoBehaviour
             if (player_startingHealth <= 0)
             { 
                 showLossScreen = true;
+                Debug.Log("ded");
                 Time.timeScale = 0;
                 labelText = "You've been got :(";
             }
@@ -72,7 +73,7 @@ public class Game_Behavior_UI : MonoBehaviour
     }
 
     public int itemsCollected = 0;
-    public int maxItems = 1;
+    public int maxItems = 0;
     public int Items
     {
         get
@@ -83,14 +84,11 @@ public class Game_Behavior_UI : MonoBehaviour
         set
         {
             itemsCollected = value;
-            Debug.Log("Items Collected: " + itemsCollected); //Debugging Log
 
             if (itemsCollected >= maxItems)
             {
                 labelText = "You found all the items!";
                 showWinScreen = true;
-                Debug.Log("Win Screen Triggered!"); //Debugging Log
-                Time.timeScale = 0f;
             }
         }
     }
