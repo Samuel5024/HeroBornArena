@@ -528,9 +528,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1164248857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 227.87, y: 248}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 227.87, y: -62}
   m_SizeDelta: {x: 455.73328, y: 167.55481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218912903
@@ -891,9 +891,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1164248857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 227.87, y: 280.56}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 227.87, y: -129.5}
   m_SizeDelta: {x: 455.73328, y: 167.55481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359014788
@@ -1311,9 +1311,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1164248857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 227.87, y: 218}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 227.87, y: -92}
   m_SizeDelta: {x: 455.73328, y: 167.55481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500905242
@@ -1542,19 +1542,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 543722361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d5258c9032edfd49b8cc5e68cdd8606, type: 3}
+  m_Script: {fileID: 11500000, guid: 25eeb0f6e1a6d0b40b4142be205f232a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   showWinScreen: 0
   showLossScreen: 0
   labelText: Grab HP, Weaponry, and Bombs
-  player_StartingHealth: 10
-  player_StartingHealthText: {fileID: 359014788}
-  initial_BombCountText: {fileID: 500905242}
+  player_startingHealthText: {fileID: 359014788}
+  initial_bombCountText: {fileID: 500905242}
   itemsCollectedText: {fileID: 218912903}
   Win: {fileID: 1505287481}
   Lose: {fileID: 1020586287}
-  initial_BombCount: 0
+  player_startingHealth: 10
+  initial_bombCount: 0
+  itemsCollected: 0
   maxItems: 9
 --- !u!4 &560055089 stripped
 Transform:

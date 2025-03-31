@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item_Behavior_Gun : MonoBehaviour
 {    
-    public Game_Behavior gameManager;
+    public Game_Behavior_UI gameManager;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").
-            GetComponent<Game_Behavior>();
+            GetComponent<Game_Behavior_UI>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -18,7 +18,7 @@ public class Item_Behavior_Gun : MonoBehaviour
         {
             Destroy(this.transform.gameObject); //erase item from hierarchy when collected by player
             Debug.Log("Here's a Weapon.\nHOORAY! Now try not to die :)");
-            gameManager.Items += 1;
+            gameManager.itemsCollected += 1;
             collision.gameObject.GetComponent<Player_Behavior>().OnGun();
         }
     }

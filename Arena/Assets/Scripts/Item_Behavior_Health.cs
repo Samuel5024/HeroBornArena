@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item_Behavior_Health: MonoBehaviour
 {
-    public Game_Behavior gameManager;
+    public Game_Behavior_UI gameManager;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").
-            GetComponent<Game_Behavior>();
+            GetComponent<Game_Behavior_UI>();
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -17,8 +17,8 @@ public class Item_Behavior_Health: MonoBehaviour
         {
             Destroy(this.transform.gameObject);
             Debug.Log("You grabbed a Health Kit and restored 5 HP :)");
-            gameManager.Health += 5;
-            gameManager.Items += 1;
+            gameManager.player_startingHealth += 5;
+            gameManager.itemsCollected += 1;
         }
     }
 }

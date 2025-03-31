@@ -19,14 +19,16 @@ public class Player_Behavior : MonoBehaviour
     private Rigidbody _rb; //capsule rigid body info
     private bool hasGun = false;
     private CapsuleCollider _col;
-    private Game_Behavior _gameManager;
+    
+    private Game_Behavior_UI _gameManager;
+    
     public bool yes; //part of the IsGroundedButBetter logic
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>(); //check if RigidBody component exists
         _col = GetComponent<CapsuleCollider>();
-        _gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior_UI>();
     }
     void Update()
     {
@@ -106,7 +108,7 @@ public class Player_Behavior : MonoBehaviour
     {
         if(collision.gameObject.name == "Enemy")
         {
-            _gameManager.player_StartingHealth -= 5;
+            _gameManager.player_startingHealth -= 5;
         }
     }
 }

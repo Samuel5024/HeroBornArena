@@ -7,31 +7,31 @@ public class Game_Behavior_UI : MonoBehaviour
     public bool showWinScreen = false;
     public bool showLossScreen = false;
     public string labelText = "Grab HP, Weaponry, and Bombs";
-    public int player_StartingHealth = 10;
     private int player_MaxHealth = 30;
 
-    public TextMeshProUGUI player_StartingHealthText;
-    public TextMeshProUGUI initial_BombCountText;
+    public TextMeshProUGUI player_startingHealthText;
+    public TextMeshProUGUI initial_bombCountText;
     public TextMeshProUGUI itemsCollectedText;
 
     public GameObject Win;
     public GameObject Lose;
 
+    public int player_startingHealth = 10;
     public int Health
     {
         get
         {
-            return player_StartingHealth;
+            return player_startingHealth;
         }
 
         set
         {
-            player_StartingHealth = value;
-            if (player_StartingHealth >= player_MaxHealth)
+            player_startingHealth = value;
+            if (player_startingHealth >= player_MaxHealth)
             {
                 labelText = "You are now at Full HP! :3";
             }
-            if (player_StartingHealth <= 0)
+            if (player_startingHealth <= 0)
             { 
                 showLossScreen = true;
                 Time.timeScale = 0;
@@ -46,33 +46,33 @@ public class Game_Behavior_UI : MonoBehaviour
         }
     }
 
-    public int initial_BombCount = 0;
+    public int initial_bombCount = 0;
     private int max_BombCount = 3;
     public int Bombs
     {
         get
         {
-            return initial_BombCount;
+            return initial_bombCount;
         }
 
         set
         {
-            initial_BombCount = value;
+            initial_bombCount = value;
             Debug.Log("Bomb picked!");
-            if (initial_BombCount >= max_BombCount)
+            if (initial_bombCount >= max_BombCount)
             {
                 labelText = "All Bombs have been collected!";
             }
             else
             {
                 labelText = "There are still " +
-                    (max_BombCount - initial_BombCount) + " bombs to collect!";
+                    (max_BombCount - initial_bombCount) + " bombs to collect!";
             }
         }
     }
 
-    private int itemsCollected = 0;
-    public int maxItems = 9;
+    public int itemsCollected = 0;
+    public int maxItems = 1;
     public int Items
     {
         get
@@ -83,11 +83,13 @@ public class Game_Behavior_UI : MonoBehaviour
         set
         {
             itemsCollected = value;
+            Debug.Log("Items Collected: " + itemsCollected); //Debugging Log
 
             if (itemsCollected >= maxItems)
             {
                 labelText = "You found all the items!";
                 showWinScreen = true;
+                Debug.Log("Win Screen Triggered!"); //Debugging Log
                 Time.timeScale = 0f;
             }
         }
@@ -99,16 +101,10 @@ public class Game_Behavior_UI : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    void Start ()
-    {
-        Win.SetActive(false);
-        Lose.SetActive(false);
-    }
-
     void Update()
     {
-        player_StartingHealthText.text = "Player Health: " + player_StartingHealth;
-        initial_BombCountText.text = "Bombs Collected: " + initial_BombCount;
+        player_startingHealthText.text = "Player Health: " + player_startingHealth;
+        initial_bombCountText.text = "Bombs Collected: " + initial_bombCount;
         itemsCollectedText.text = "Items Collected: " + itemsCollected;
 
         if (showWinScreen)

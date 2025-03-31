@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item_Behavior_Bomb : MonoBehaviour
 {
-    public Game_Behavior gameManager;
+    public Game_Behavior_UI gameManager;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").
-            GetComponent<Game_Behavior>();
+            GetComponent<Game_Behavior_UI>();
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -17,8 +17,8 @@ public class Item_Behavior_Bomb : MonoBehaviour
         {
             Destroy(this.transform.gameObject);
             Debug.Log("You Got a Bomb! \n Time to go KABOOM!");
-            gameManager.Bombs += 1;
-            gameManager.Items += 1;
+            gameManager.initial_bombCount += 1;
+            gameManager.itemsCollected += 1;
         }
     }
 }
