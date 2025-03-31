@@ -106,7 +106,7 @@ public class Player_Behavior : MonoBehaviour
     {
         if(collision.gameObject.name == "Enemy")
         {
-            _gameManager.Health -= 5;
+            _gameManager.player_StartingHealth -= 5;
         }
     }
 }
