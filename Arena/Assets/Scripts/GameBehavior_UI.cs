@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 public class Game_Behavior_UI : MonoBehaviour
 {
     public bool showWinScreen = false;
@@ -16,7 +17,7 @@ public class Game_Behavior_UI : MonoBehaviour
     public GameObject Win;
     public GameObject Lose;
 
-    public int player_startingHealth = 10;
+    private int player_startingHealth = 10;
     public int Health
     {
         get
@@ -47,7 +48,7 @@ public class Game_Behavior_UI : MonoBehaviour
         }
     }
 
-    public int initial_bombCount = 0;
+    private int initial_bombCount = 0;
     private int max_BombCount = 3;
     public int Bombs
     {
@@ -72,8 +73,8 @@ public class Game_Behavior_UI : MonoBehaviour
         }
     }
 
-    public int itemsCollected = 0;
-    public int maxItems = 0;
+    private int itemsCollected = 0;
+    public int maxItems = 9;
     public int Items
     {
         get
@@ -109,12 +110,14 @@ public class Game_Behavior_UI : MonoBehaviour
         {
             Win.SetActive(true);
             Lose.SetActive(false);
+            Time.timeScale = 0.0f;
         }
 
         else if (showLossScreen)
         {
             Win.SetActive(false);
             Lose.SetActive(true);
+            Time.timeScale = 0.0f;
         }
 
         else
