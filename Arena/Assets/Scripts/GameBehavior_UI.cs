@@ -94,11 +94,6 @@ public class Game_Behavior_UI : MonoBehaviour
         }
     }
 
-    void RestartLevel()
-    {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1.0f;
-    }
 
     void Update()
     {
@@ -124,6 +119,7 @@ public class Game_Behavior_UI : MonoBehaviour
         {
             Win.SetActive(false);
             Lose.SetActive(false);
+            Time.timeScale = 1.0f;
         }
     }
 

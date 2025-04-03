@@ -713,7 +713,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109582137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639fa907cee263842bc33e3d975962d5, type: 3}
+  m_Script: {fileID: 11500000, guid: ae695176d2a9c5e4baeed80bbf1cae60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1113410671
@@ -986,8 +986,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1109582141}
-        m_TargetAssemblyTypeName: Credits, Assembly-CSharp
-        m_MethodName: Restart
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

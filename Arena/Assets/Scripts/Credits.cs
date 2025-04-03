@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour {
 
-    public void Restart()
+    public void goToCredits()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
