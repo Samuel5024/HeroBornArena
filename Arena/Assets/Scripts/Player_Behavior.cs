@@ -12,6 +12,8 @@ public class Player_Behavior : MonoBehaviour
     public GameObject bullet;
     public float bulletSpeed = 45f;
     public LayerMask groundLayer;
+    public AudioClip shootingSound; //drag gunshot clip here
+    public AudioSource audioSource; //audio source reference
     private float vInput;
     private float hInput;
     private bool jump = false;
@@ -29,6 +31,7 @@ public class Player_Behavior : MonoBehaviour
         _rb = GetComponent<Rigidbody>(); //check if RigidBody component exists
         _col = GetComponent<CapsuleCollider>();
         _gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior_UI>();
+        audioSource = GetComponent<AudioSource>(); // Cache AudioSource
     }
     void Update()
     {
@@ -73,6 +76,12 @@ public class Player_Behavior : MonoBehaviour
         if(shoot && hasGun)
         {
             shoot = false;
+
+            //play gunshot sound
+            if(shootingSound != null &&  shootingSound != null)
+            {
+                audioSource.Play();
+            }
             GameObject newBullet = Instantiate(bullet, this.transform.position - //always shoot from the right side of capsule
                 transform.right, this.transform.rotation) as GameObject;
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
