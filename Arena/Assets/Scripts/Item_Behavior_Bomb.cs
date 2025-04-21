@@ -3,30 +3,20 @@ using UnityEngine;
 public class Item_Behavior_Bomb : MonoBehaviour
 {
     public Game_Behavior_UI gameManager;
-    public AudioClip pickupClip; //assign in inspector
-    private AudioSource pickupSound;
 
-    private void Start()
+    void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior_UI>();
-        pickupSound = GetComponentInChildren<AudioSource>(); // get from child
+        gameManager = GameObject.Find("GameManager").
+            GetComponent<Game_Behavior_UI>();
     }
-
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Pickup triggered: playing sound " + pickupClip.name);
-
-            if (pickupClip != null && pickupSound != null)
-            {
-                pickupSound.PlayOneShot(pickupClip);
-            }
-
+            Destroy(this.transform.gameObject);
+            Debug.Log("You Got a Bomb! \n Time to go KABOOM!");
             gameManager.Bombs += 1;
             gameManager.Items += 1;
-            Destroy(gameObject, pickupClip != null ? pickupClip.length : 0f);
         }
     }
-
 }
