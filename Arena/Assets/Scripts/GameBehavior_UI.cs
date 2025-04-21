@@ -17,6 +17,11 @@ public class Game_Behavior_UI : MonoBehaviour
     public GameObject Win;
     public GameObject Lose;
 
+    void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private int player_startingHealth = 10;
     public int Health
     {
@@ -119,7 +124,6 @@ public class Game_Behavior_UI : MonoBehaviour
         {
             Win.SetActive(false);
             Lose.SetActive(false);
-            Time.timeScale = 1.0f;
         }
     }
 

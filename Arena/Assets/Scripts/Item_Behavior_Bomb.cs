@@ -1,24 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item_Behavior_Bomb : MonoBehaviour
 {
     public Game_Behavior_UI gameManager;
+    public AudioClip pickupClip; //assign in inspector
+    private AudioSource pickupSound;
 
-    void Start()
+    private void Start()
     {
-        gameManager = GameObject.Find("GameManager").
-            GetComponent<Game_Behavior_UI>();
+        gameManager = GameObject.Find("GameManager").GetComponent<Game_Behavior_UI>();
+        pickupSound = GetComponentInChildren<AudioSource>(); // get from child
     }
-    void OnCollisionEnter(Collision collision)
+
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "Player")
         {
-            Destroy(this.transform.gameObject);
-            Debug.Log("You Got a Bomb! \n Time to go KABOOM!");
+            Debug.Log("Pickup triggered: playing sound " + pickupClip.name);
+
+            if (pickupClip != null && pickupSound != null)
+            {
+                pickupSound.PlayOneShot(pickupClip);
+            }
+
             gameManager.Bombs += 1;
             gameManager.Items += 1;
+            Destroy(gameObject, pickupClip != null ? pickupClip.length : 0f);
         }
     }
+
 }
