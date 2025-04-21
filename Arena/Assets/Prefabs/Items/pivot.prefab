@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  pickupClip: {fileID: 8300000, guid: 5690c0505971c6842ada7c9831ae1eeb, type: 3}
 --- !u!82 &4171854270951584729
 AudioSource:
   m_ObjectHideFlags: 0

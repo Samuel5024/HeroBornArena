@@ -78,7 +78,7 @@ public class Player_Behavior : MonoBehaviour
             shoot = false;
 
             //play gunshot sound
-            if(shootingSound != null &&  shootingSound != null)
+            if(shootingSound != null && audioSource != null)
             {
                 audioSource.Play();
             }
