@@ -5,5 +5,5 @@ Use the WASD/Arrow Keys to Move!
 Avoid Enemy Contact  
 Grab Collectables  
 Left-Click to shoot  
-Welcome to the Arena: https://samuel5024.github.io/HeroBornArena/
+Play Here: https://samuel5024.itch.io/collector-born  
  
